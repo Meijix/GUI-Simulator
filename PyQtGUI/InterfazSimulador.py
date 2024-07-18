@@ -1,8 +1,8 @@
 # main_window.py
 
 """Main window-style application."""
-
 import sys
+
 from PyQt6.QtWidgets import (
     QApplication,
     QLabel,
@@ -24,6 +24,7 @@ from PyQt6.QtWidgets import (
 class Window(QMainWindow):
     def __init__(self):
         super().__init__(parent=None)
+        self.setStyleSheet("background-color: #B5CFEE;")  # Azul oscuro serio
         self.setWindowTitle("Rocket Simulator")
         self.setCentralWidget(QTabWidget())
         self._createTabs()
@@ -54,7 +55,11 @@ class Window(QMainWindow):
         self._createComponentsTab(components_tab)
         self._createMotorCurveTab(motor_curve_tab)
         self._createGraphicsTab(graphics_tab)
+        #self._createAtmosphereTab(atmosphere_tab)
+        self._createSimulationTab(simulation_tab)
+        #self._createMassVarTab(mass_var_tab)
 
+##Design Tab
     def _createDesignTab(self, tab):
         layout = QVBoxLayout()
         tab.setLayout(layout)
@@ -81,6 +86,14 @@ class Window(QMainWindow):
         self.dimensions_input = QLineEdit()
         input_layout.addWidget(self.dimensions_input)
 
+        input_layout.addWidget(QLabel("Otras dimensiones:"))
+        self.dimensions_input = QLineEdit()
+        input_layout.addWidget(self.dimensions_input)
+
+        input_layout.addWidget(QLabel("Otras dimensiones:"))
+        self.dimensions_input = QLineEdit()
+        input_layout.addWidget(self.dimensions_input)
+
         layout.addLayout(input_layout)
 
         # Botón para guardar
@@ -89,7 +102,7 @@ class Window(QMainWindow):
         layout.addWidget(save_button)
 
         # Mensaje de continuar
-        self.continue_message = QLabel("")
+        self.continue_message = QLabel("Continua en la siguiente pestaña")
         layout.addWidget(self.continue_message)
 
     def saveDesignData(self):
@@ -98,18 +111,22 @@ class Window(QMainWindow):
         thickness = self.thickness_input.text()
         dimensions = self.dimensions_input.text()
         # Aquí puedes guardar los datos en variables o en una base de datos
-        print(f"Guardando datos: Nombre={name}, Diámetro externo={diameter}, Espesor={thickness}, Otras dimensiones={dimensions}")
+        print(f"Guardando datos")
         self.continue_message.setText("Valores guardados correctamente. Continuar...")
 
+
+##Components Tab
     def _createComponentsTab(self, tab):
         layout = QVBoxLayout()
         tab.setLayout(layout)
 
         # Lista de componentes
         components_list = QListWidget()
+        components_list.addItem(QListWidgetItem("Nariz"))
+        components_list.addItem(QListWidgetItem("Fuselaje"))
         components_list.addItem(QListWidgetItem("Motor"))
         components_list.addItem(QListWidgetItem("Tanque de Combustible"))
-        components_list.addItem(QListWidgetItem("Sistema de Guiado"))
+        components_list.addItem(QListWidgetItem("Aletas"))
         components_list.addItem(QListWidgetItem("Paracaídas"))
 
         layout.addWidget(components_list)
@@ -142,8 +159,7 @@ class Window(QMainWindow):
     def clearDesignData(self):
         self.value_input.clear()
 
-    #... resto del código...
-
+##Motor curve Tab
     def _createMotorCurveTab(self, tab):
         layout = QVBoxLayout()
         tab.setLayout(layout)
@@ -170,6 +186,7 @@ class Window(QMainWindow):
 
         layout.addLayout(button_layout)
 
+##Graphics Tab
     def _createGraphicsTab(self, tab):
         layout = QVBoxLayout()
         tab.setLayout(layout)
@@ -192,6 +209,13 @@ class Window(QMainWindow):
         self.motor_input.clear()
         self.curve_input.clear()
 
+##Simulation Tab
+    def _createSimulationTab(self,tab):
+        layout = QVBoxLayout()
+        tab.setLayout(layout)
+    
+
+##Menu Tab
     def _createMenu(self):
         menu = self.menuBar().addMenu("&Menu")
         menu.addAction("&Exit", self.close)

@@ -21,9 +21,11 @@ class Baldr():
 		self.f0 = ttk.Frame(n)
 		self.f1 = ttk.Frame(n)
 		self.f2 = ttk.Frame(n)
-		n.add(self.f0, text='Simulators', padding=(5, 5))
-		n.add(self.f1, text='Integrators', padding=(5, 5))
-		n.add(self.f2, text='Trajectories', padding=(5, 5))
+		n.add(self.f0, text='Diseno', padding=(5, 8))
+		n.add(self.f0, text='Curva de motor', padding=(5, 5))
+		n.add(self.f0, text='Atmosfera y viento', padding=(5, 5))
+		n.add(self.f1, text='Simulacion', padding=(5, 5))
+		n.add(self.f2, text='Graficas', padding=(5, 5))
 		n.pack(fill=BOTH, pady=5, expand=1)
 
 		# Main GUI data structure.

@@ -1,9 +1,3 @@
-'''
-	Developed by Samuel Tanner Lindemer 2015
-	Le Laboaratoire des Signaux et Systemes
-	Centrale-Supelec Universite, Gif-sur-Yvette, France
-	samuel.lindemer@lss.supelec.fr
-'''
 
 import os, sys, time, pickle
 import numpy as np
@@ -20,7 +14,7 @@ class Baldr():
 
 	def tk_mainloop(self):
 		self.root = Tk()
-		self.root.title('baldr')
+		self.root.title('Rocket Simulator NEMB')
 		content = ttk.Frame(self.root, padding=(10, 10))
 
 		n = ttk.Notebook(content)

@@ -1,10 +1,3 @@
-'''
-	Developed by Samuel Tanner Lindemer 2015
-	Le Laboaratoire des Signaux et Systemes
-	Centrale-Supelec Universite, Gif-sur-Yvette, France
-	samuel.lindemer@lss.supelec.fr
-'''
-
 import matplotlib.pyplot as plt
 import mpl_toolkits.mplot3d as a3
 import numpy as np

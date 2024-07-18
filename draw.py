@@ -1,9 +1,4 @@
-'''
-	Developed by Samuel Tanner Lindemer 2015
-	Le Laboaratoire des Signaux et Systemes
-	Centrale-Supelec Universite, Gif-sur-Yvette, France
-	samuel.lindemer@lss.supelec.fr
-'''
+
 
 from mpl_toolkits.mplot3d.art3d import Line3D
 from mpl_toolkits.mplot3d import Axes3D

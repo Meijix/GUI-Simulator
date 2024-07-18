@@ -1,11 +1,3 @@
-#! /usr/bin/env python3
-'''
-	Developed by Samuel Tanner Lindemer 2015
-	Le Laboaratoire des Signaux et Systemes
-	Centrale-Supelec Universite, Gif-sur-Yvette, France
-	samuel.lindemer@lss.supelec.fr
-'''
-
 from multiprocessing import Process, Queue
 
 def component_handler(request, progress_q, simulation_q):
@@ -63,11 +55,8 @@ def request_handler(request_q, progress_q, simulation_q):
 
 if __name__ == '__main__':
 	print('\n\
-Baldr Quadrotor Simulator\n\
-Developed by Samuel Tanner Lindemer 2015\n\
-Le Laboratoire des Signaux et Systemes\n\
-Centrale-Supelec Universite, Gif-sur-Yvette, France\n\
-samuel.lindemer@lss.supelec.fr', end='\n\n')
+NEMB Rocket Simulator\n\
+Nat Mejia Bautista\n', end='\n\n')
 
 	# this queue transfers data from the main gui process to the request_handler process (terminate, exit, initialize)
 	request_q = Queue()

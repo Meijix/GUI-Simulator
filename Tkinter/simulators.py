@@ -1,12 +1,7 @@
-'''
-	Developed by Samuel Tanner Lindemer 2015
-	Le Laboaratoire des Signaux et Systemes
-	Centrale-Supelec Universite, Gif-sur-Yvette, France
-	samuel.lindemer@lss.supelec.fr
-'''
+
 
 from scipy.integrate import ode
-import models, trajectories, controllers
+import Tkinter.models, Tkinter.trajectories, Tkinter.controllers
 import numpy as np
 
 class Simulation():
